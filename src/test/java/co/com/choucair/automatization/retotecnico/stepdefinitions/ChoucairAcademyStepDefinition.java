@@ -1,5 +1,6 @@
 package co.com.choucair.automatization.retotecnico.stepdefinitions;
 
+import co.com.choucair.automatization.retotecnico.model.ChoucairAcademyData;
 import co.com.choucair.automatization.retotecnico.questions.Answer;
 import co.com.choucair.automatization.retotecnico.tasks.Login;
 import co.com.choucair.automatization.retotecnico.tasks.OpenUp;
@@ -12,6 +13,8 @@ import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
+import java.util.List;
+
 public class ChoucairAcademyStepDefinition {
 
     @Before
@@ -20,8 +23,8 @@ public class ChoucairAcademyStepDefinition {
     }
 
     @Given("^than brandon wants to learn automation at the academy Choucair$")
-    public void thanBrandonWantsToLearnAutomationAtTheAcademyChoucair() {
-        OnStage.theActorCalled("Brandon").wasAbleTo(OpenUp.thePage(),(Login.onThePage()));
+    public void thanBrandonWantsToLearnAutomationAtTheAcademyChoucair(List<ChoucairAcademyData> data) {
+        OnStage.theActorCalled("Brandon").wasAbleTo(OpenUp.thePage(),(Login.onThePage(data)));
 
     }
 
