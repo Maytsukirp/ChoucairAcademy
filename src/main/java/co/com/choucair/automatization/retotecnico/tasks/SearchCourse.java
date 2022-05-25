@@ -14,10 +14,12 @@ public class SearchCourse implements Task {
     private String course;
 
     public SearchCourse(String course) {
+
         this.course = course;
     }
 
     public static SearchCourse the(String course) {
+
         return Tasks.instrumented(SearchCourse.class, course);
     }
 

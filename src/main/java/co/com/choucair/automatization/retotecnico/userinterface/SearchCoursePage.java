@@ -21,4 +21,3 @@ public class SearchCoursePage extends PageObject {
     public static final Target NAME_COURSE = Target.the("name course")
             .located(By.cssSelector("h1"));
 }
-//*[@id="page-search-index"]

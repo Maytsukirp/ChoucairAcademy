@@ -2,6 +2,7 @@ package co.com.choucair.automatization.retotecnico.stepdefinitions;
 
 import co.com.choucair.automatization.retotecnico.model.ChoucairAcademyData;
 import co.com.choucair.automatization.retotecnico.questions.Answer;
+
 import static co.com.choucair.automatization.retotecnico.tasks.ChoucairLogin.Login;
 
 import co.com.choucair.automatization.retotecnico.tasks.ChoucairAcademyOpenUp;
@@ -20,6 +21,7 @@ public class ChoucairAcademyStepDefinition {
 
     @Before
     public void setState(){
+
         OnStage.setTheStage(new OnlineCast());
     }
 

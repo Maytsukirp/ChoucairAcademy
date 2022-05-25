@@ -20,6 +20,5 @@ public class ChoucairAcademyOpenUp implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Open.browserOn(choucairAcademyPage));
 
-
     }
 }
