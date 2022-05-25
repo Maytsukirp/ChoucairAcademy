@@ -2,9 +2,10 @@ package co.com.choucair.automatization.retotecnico.stepdefinitions;
 
 import co.com.choucair.automatization.retotecnico.model.ChoucairAcademyData;
 import co.com.choucair.automatization.retotecnico.questions.Answer;
-import co.com.choucair.automatization.retotecnico.tasks.Login;
-import co.com.choucair.automatization.retotecnico.tasks.OpenUp;
-import co.com.choucair.automatization.retotecnico.tasks.Search;
+import static co.com.choucair.automatization.retotecnico.tasks.ChoucairLogin.Login;
+
+import co.com.choucair.automatization.retotecnico.tasks.ChoucairAcademyOpenUp;
+import co.com.choucair.automatization.retotecnico.tasks.SearchCourse;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -24,14 +25,14 @@ public class ChoucairAcademyStepDefinition {
 
     @Given("^than brandon wants to learn automation at the academy Choucair$")
     public void thanBrandonWantsToLearnAutomationAtTheAcademyChoucair(List<ChoucairAcademyData> data) {
-        OnStage.theActorCalled("Brandon").wasAbleTo(OpenUp.thePage(),(Login.onThePage(data)));
+        OnStage.theActorCalled("Brandon").wasAbleTo(ChoucairAcademyOpenUp.thePage(),(Login().withUsername(data).andWithPassword(data)));
 
     }
 
 
     @When("^he search for the course (.*) on the choucair academy platform$")
     public void heSearchForTheCourseRecursosAutomatizacionBancolombiaOnTheChoucairAcademyPlatform(String course) {
-        OnStage.theActorInTheSpotlight().attemptsTo(Search.the(course));
+        OnStage.theActorInTheSpotlight().attemptsTo(SearchCourse.the(course));
 
     }
 

@@ -1,7 +1,5 @@
 package co.com.choucair.automatization.retotecnico.tasks;
 
-import co.com.choucair.automatization.retotecnico.userinterface.ChoucairLoginPage;
-import co.com.choucair.automatization.retotecnico.userinterface.SearchCoursePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -11,16 +9,16 @@ import net.serenitybdd.screenplay.actions.Enter;
 import static co.com.choucair.automatization.retotecnico.userinterface.SearchCoursePage.*;
 
 
-public class Search implements Task {
+public class SearchCourse implements Task {
 
     private String course;
 
-    public Search(String course) {
+    public SearchCourse(String course) {
         this.course = course;
     }
 
-    public static Search the(String course) {
-        return Tasks.instrumented(Search.class, course);
+    public static SearchCourse the(String course) {
+        return Tasks.instrumented(SearchCourse.class, course);
     }
 
     @Override

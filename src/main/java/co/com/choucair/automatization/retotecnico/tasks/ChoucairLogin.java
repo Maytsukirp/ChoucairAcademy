@@ -1,6 +1,7 @@
 package co.com.choucair.automatization.retotecnico.tasks;
 
 import co.com.choucair.automatization.retotecnico.model.ChoucairAcademyData;
+import co.com.choucair.automatization.retotecnico.model.builder.LoginBuilder;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -12,16 +13,15 @@ import java.util.List;
 import static co.com.choucair.automatization.retotecnico.userinterface.ChoucairLoginPage.*;
 
 
-public class Login implements Task {
+public class ChoucairLogin implements Task {
     List<ChoucairAcademyData> data;
 
-    public Login(List<ChoucairAcademyData> data) {
+    public ChoucairLogin(List<ChoucairAcademyData> data) {
         this.data = data;
     }
-    
-    public static Login onThePage(List<ChoucairAcademyData> data) {
-        return Tasks.instrumented(Login.class, data);
 
+    public static LoginBuilder Login(){
+        return new LoginBuilder();
     }
 
     @Override

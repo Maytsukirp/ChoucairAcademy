@@ -6,13 +6,13 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Open;
 
-public class OpenUp implements Task {
+public class ChoucairAcademyOpenUp implements Task {
     private ChoucairAcademyPage choucairAcademyPage;
 
 
-    public static OpenUp thePage() {
+    public static ChoucairAcademyOpenUp thePage() {
 
-        return Tasks.instrumented(OpenUp.class);
+        return Tasks.instrumented(ChoucairAcademyOpenUp.class);
     }
 
 
